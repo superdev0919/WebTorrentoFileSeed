@@ -1,6 +1,7 @@
 import User from '../../models/User.js'
 import { sendEmail } from '../../../utils/nodemailer.js'
 import { forgotMessage } from '../../../utils/emailTemplate.js'
+import 'dotenv/config'
 
 const schemaName = User
 
@@ -17,7 +18,7 @@ export const postForgotPassword = async (req, res) => {
     const resetToken = user.getResetPasswordToken()
     await user.save()
 
-    const resetUrl = `http://localhost:3000/auth/reset-password/${resetToken}`
+    const resetUrl = `http://${process.env.SERVER_ADDR}:3000/auth/reset-password/${resetToken}`
     const message = forgotMessage(resetUrl, user)
 
     const result = sendEmail({
