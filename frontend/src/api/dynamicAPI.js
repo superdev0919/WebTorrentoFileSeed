@@ -1,5 +1,4 @@
 import axios from 'axios'
-import 'dotenv/config'
 import { config } from '../utils/customLocalStorage'
 
 const dynamicAPI = async (method, url, obj = {}) => {

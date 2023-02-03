@@ -1,7 +1,6 @@
 import User from '../../models/User.js'
 import { sendEmail } from '../../../utils/nodemailer.js'
 import { forgotMessage } from '../../../utils/emailTemplate.js'
-import 'dotenv/config'
 
 const schemaName = User
 
