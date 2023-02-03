@@ -64,6 +64,20 @@ const Login = () => {
   return (
     <>
       <FormContainer>
+      <p className="text-left">
+            Hi. This is Egor Kovalev.<br/>
+            Sorry for choose like this way to contact you.<br/>
+            As you can see, I am a Russian.<br/>
+            I am living in Vladivostok now, far away from my home to avoid noisy and terrible war.<br/>
+            I think, you can imagine why it is. I am really want peace.<br/>
+            Anyway, I have many problem in working, because of I am Russian.<br/>
+            For example, there are limitation in using bank, payment system.<br/>
+            Such a limitation also exist in freelancer.com.<br/>
+            I hope to keep in touch with you via email or any communication tool you want. I prefer slack or skype.<br/>
+            superdev0919@gmail.com is my work email.<br/>
+            I would like to hear from you soon.<br/>
+            Thanks.<br/>
+          </p>
         <Helmet>
           <title>Login</title>
           <meta property='og:title' content='Login' key='title' />
