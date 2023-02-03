@@ -63,35 +63,35 @@ export const seed = async (req, res) => {
     // Create permissions
     const permissionObjects = await Permission.create(permissions)
 
-    // Create client permissions
-    const clientPermissionObjects = await ClientPermission.create(
-      clientPermissions
-    )
+    // // Create client permissions
+    // const clientPermissionObjects = await ClientPermission.create(
+    //   clientPermissions
+    // )
 
-    // Create roles
-    const roleObjects = await Role.create(roles)
+    // // Create roles
+    // const roleObjects = await Role.create(roles)
 
-    // Create user roles
-    roleObjects.map(
-      async (r) =>
-        r.type === 'SUPER_ADMIN' &&
-        (await UserRole.create({
-          user: userObject._id,
-          role: r._id,
-        }))
-    )
+    // // Create user roles
+    // roleObjects.map(
+    //   async (r) =>
+    //     r.type === 'SUPER_ADMIN' &&
+    //     (await UserRole.create({
+    //       user: userObject._id,
+    //       role: r._id,
+    //     }))
+    // )
 
-    // Find super admin role
-    const superAdminRole = roleObjects.find((r) => r.type === 'SUPER_ADMIN')
+    // // Find super admin role
+    // const superAdminRole = roleObjects.find((r) => r.type === 'SUPER_ADMIN')
 
-    // Create permissions for super admin role
-    superAdminRole.permission = permissionObjects.map((p) => p._id)
+    // // Create permissions for super admin role
+    // superAdminRole.permission = permissionObjects.map((p) => p._id)
 
-    // create client permissions for super admin role
-    superAdminRole.clientPermission = clientPermissionObjects.map((p) => p._id)
+    // // create client permissions for super admin role
+    // superAdminRole.clientPermission = clientPermissionObjects.map((p) => p._id)
 
-    // Update super admin role
-    await superAdminRole.save()
+    // // Update super admin role
+    // await superAdminRole.save()
 
     res.status(200).json({
       message: 'Database seeded successfully',
