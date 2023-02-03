@@ -6,22 +6,22 @@ const dynamicAPI = async (method, url, obj = {}) => {
     switch (method) {
       case 'get':
         return await axios
-          .get(`http://${process.env.SERVER_ADDR}:5000${url}`, config())
+          .get(`http://159.89.22.147:5000${url}`, config())
           .then((res) => res.data)
 
       case 'post':
         return await axios
-          .post(`http://${process.env.SERVER_ADDR}:5000${url}`, obj, config())
+          .post(`http://159.89.22.147:5000${url}`, obj, config())
           .then((res) => res.data)
 
       case 'put':
         return await axios
-          .put(`http://${process.env.SERVER_ADDR}:5000${url}`, obj, config())
+          .put(`http://159.89.22.147:5000${url}`, obj, config())
           .then((res) => res.data)
 
       case 'delete':
         return await axios
-          .delete(`http://${process.env.SERVER_ADDR}:5000${url}`, config())
+          .delete(`http://159.89.22.147:5000${url}`, config())
           .then((res) => res.data)
     }
   } catch (error) {
