@@ -72,14 +72,14 @@ export const seed = async (req, res) => {
     const roleObjects = await Role.create(roles)
 
     // Create user roles
-    roleObjects.map(
+    await Promise.all (roleObjects.map(
       async (r) =>
         r.type === 'SUPER_ADMIN' &&
         (await UserRole.create({
           user: userObject._id,
           role: r._id,
         }))
-    )
+    ))
 
     // Find super admin role
     const superAdminRole = roleObjects.find((r) => r.type === 'SUPER_ADMIN')
